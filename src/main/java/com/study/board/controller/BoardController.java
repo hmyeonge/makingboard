@@ -2,6 +2,7 @@ package com.study.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -11,5 +12,14 @@ public class BoardController {
     public String boardWriteForm(){
 
         return "boardwrite"; // 어떤 HTML 파일로 보낼지를 결정
+    }
+
+    // 내용이 넘어오는 것을 확인
+    @PostMapping("/board/writepro") // 매개변수로 들어오는 것 작성
+    public String boardWritePro(String title,String content) {
+        System.out.println("제목 : " + title);
+        System.out.println("내용 : " + content);
+
+        return "";
     }
 }

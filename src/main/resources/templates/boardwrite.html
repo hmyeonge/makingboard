@@ -13,33 +13,14 @@
             margin-top : 50px;
         }
 
-        .layout > input, .layout > textarea {
+        .layout input, textarea {
             width:100%;
             box-sizing : border-box;
         }
 
-        .layout > textarea {
+        .layout textarea {
             margin-top : 10px;
             min-height: 300px;
-        }
-
-        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            font-family: Arial, sans-serif; /* 글씨체 지정 */
-            font-size: 15px; /* 글씨 크기 지정 */
-            color: #999; /* 글씨 색상 지정 */
-            opacity: 1; /* 글씨 불투명도 지정 */
-        }
-
-        :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #999;
-        }
-
-        ::-ms-input-placeholder { /* Microsoft Edge */
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #999;
         }
 
     </style>
@@ -47,9 +28,11 @@
 
 <body>
     <div class = "layout">
-        <input type = "text" placeholder="제목을 입력하세요">
-        <textarea placeholder="내용을 입력하세요"></textarea>
-        <button>작성</button>
+        <form action="/board/writepro" method = "post">
+            <input name = "title" type = "text" placeholder="제목을 입력하세요">
+            <textarea name = "content" placeholder="내용을 입력하세요"></textarea>
+            <button type = "submit">작성</button>
+        </form>
     </div>
 </body>
 </html>
